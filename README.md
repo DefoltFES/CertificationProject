@@ -1,6 +1,6 @@
 # CertificationProject
 ## DataBase Schema
-![DBSchema](https://github.com/DefoltFES/CertificationProject/Images/blob/main/DBSchema.jpg)
+![DBSchema](https://github.com/DefoltFES/CertificationProject/blob/main/Images/DBSchema.jpg)
 
 ## Application Logic
-![AppLogic](https://github.com/DefoltFES/CertificationProject/Images/blob/main/AppLogic.jpg)
+![AppLogic](https://github.com/DefoltFES/CertificationProject/blob/main/Images/AppLogic.jpg)
