@@ -1,6 +1,6 @@
 create type user_role as enum ('user', 'admin');
 
-Create table Users (
+create table Users (
 	id integer PRIMARY KEY,
 	name varchar NOT NULL,
 	role user_role NOT NULL,
@@ -11,7 +11,7 @@ create table Questions (
 	id integer PRIMARY KEY,
 	question varchar, 
 	answer varchar,
-	theme varchar
+	topic varchar
 );
 
 create table Tests (
@@ -19,10 +19,11 @@ create table Tests (
 	name varchar NOT NULL,
 	description varchar NULL,
 	count int NOT NULL CHECK (count > 0),
-	theme varchar NOT NULL
+	topic varchar NOT NULL
 );
 
-create table UsersAndTest (
+create table UsersAndTests (
+    id integer PRIMARY KEY,
 	user_id integer REFERENCES Users (id) on delete cascade on update cascade,
 	test_id integer REFERENCES Tests (id) on delete cascade on update cascade
 );
@@ -30,13 +31,14 @@ create table UsersAndTest (
 create table Results (
 	session_id integer PRIMARY KEY,
 	user_id integer REFERENCES Users (id) on update cascade,
-	Mark integer NULL,
-	Date_start date NOT NULL,
-	Date_end date NULL CHECK (Date_end > Date_start)
+	mark integer NULL,
+	date_start date NOT NULL,
+	date_end date NULL CHECK (Date_end > Date_start)
 );
 
 create table Answers (
+    id integer PRIMARY KEY,
 	session_id integer NOT NULL REFERENCES Results(session_id) on update cascade,
 	question_id integer NOT NULL REFERENCES questions (id) on update cascade,
-	userAnswer varchar NOT NULL
-)
+	user_answer varchar NOT NULL
+);
