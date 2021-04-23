@@ -29,6 +29,7 @@ create table UsersAndTests (
 );
 
 create table Results (
+	id integer PRIMARY KEY,
 	session_id integer PRIMARY KEY,
 	user_id integer REFERENCES Users (id) on update cascade,
 	mark integer NULL,
