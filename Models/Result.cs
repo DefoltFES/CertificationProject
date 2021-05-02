@@ -1,16 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-#nullable disable
+namespace CertificationProject.Models
+{
+    public class Result
+    {
+        public int id { get; set; }
+        public string question { get; set; }
+        public string answer { get; set; }
+        public string userAnswer { get; set; }
+        public string userId { get; set; }
 
-namespace CertificationProject.Models {
-    public partial class Result {
-        public int SessionId { get; set; }
-        public int? UserId { get; set; }
-        public int? Mark { get; set; }
-        public DateTime DateStart { get; set; }
-        public DateTime? DateEnd { get; set; }
-
-        public virtual User User { get; set; }
     }
 }

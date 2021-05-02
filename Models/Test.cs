@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
-#nullable disable
+namespace CertificationProject.Models
+{
+    public class Test
+    {
+        public int id { get; set; }
+        public string answer { get; set; }
+        public string question { get; set; }
 
-namespace CertificationProject.Models {
-    public partial class Test {
-        public int Id { get; set; }
-        public string Name { get; set; }
-        public string Description { get; set; }
-        public int Count { get; set; }
-        public string Topic { get; set; }
     }
 }
