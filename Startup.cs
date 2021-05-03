@@ -11,6 +11,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using CertificationProject.Data;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc;
 
 namespace CertificationProject
 {
@@ -29,6 +30,9 @@ namespace CertificationProject
             services.AddDbContext<ApplicationDbContext>(options =>
             options.UseNpgsql(
                 Configuration.GetConnectionString("DefaultConnection")));
+            services.AddMvc().AddRazorPagesOptions(options => {
+                options.Conventions.AddAreaPageRoute("Identity", "/Account/Login", "");
+            });
             services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
         }
